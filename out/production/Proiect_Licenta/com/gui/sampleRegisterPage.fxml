@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="539.0" style="-fx-background-color: #2A0033;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ControllerRegister">
+    <children>
+        <Pane layoutY="75.0" prefHeight="570.0" prefWidth="539.0">
+            <children>
+                <TextField fx:id="NumeRegister" layoutX="203.0" layoutY="86.0" prefHeight="34.0" prefWidth="281.0" style="-fx-border-color: #9643A9; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@LogInStyle.css" />
+                <Label layoutX="56.0" layoutY="93.0" text="Nume" textFill="#ddd9d9">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="55.0" layoutY="153.0" text="Parola" textFill="#ddd9d9">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <PasswordField fx:id="ParolaRegister" layoutX="203.0" layoutY="146.0" prefHeight="34.0" prefWidth="281.0" style="-fx-background-color: #2A0033; -fx-border-color: #9643A9; -fx-border-radius: 20; -fx-background-insets: 0000;" styleClass="text-input" stylesheets="@LogInStyle.css" />
+                <Separator layoutX="62.0" layoutY="304.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
+                <Separator layoutX="54.0" layoutY="36.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
+                <Button layoutX="62.0" layoutY="343.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="57.0" prefWidth="423.0" style="-fx-background-color: #CE201C;" text="CREARE CONT NOU" textFill="WHITE" />
+            <Label layoutX="58.0" layoutY="215.0" text="Email" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="EmailRegister" layoutX="203.0" layoutY="208.0" prefHeight="34.0" prefWidth="281.0" style="-fx-border-color: #9643A9; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@LogInStyle.css" />
+            <Button fx:id="BackToLogIn" layoutX="62.0" layoutY="431.0" mnemonicParsing="false" onAction="#BackToLogIn" prefHeight="57.0" prefWidth="423.0" style="-fx-background-color: #12cc56;" text="Inapoi la pagina de LogIn" textFill="WHITE" />
+            </children>
+        </Pane>
+        <Label layoutX="226.0" layoutY="40.0" text="Register" textFill="#ddd9d9">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+      <Button fx:id="CloseButtonRegister" layoutX="501.0" layoutY="14.0" mnemonicParsing="false" onAction="#CloseButtonRegister" prefHeight="0.0" prefWidth="13.0" style="-fx-background-color: #CE201C;" text="X" textFill="WHITE" />
+    </children>
+</AnchorPane>
