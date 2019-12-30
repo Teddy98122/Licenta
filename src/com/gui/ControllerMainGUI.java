@@ -9,6 +9,17 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class ControllerMainGUI {
+
+    private Stage MainStage=new Stage();
+    public void launchMain() throws Exception
+    {
+        Parent MainScene = FXMLLoader.load(getClass().getResource("sampleMainGUI.fxml"));
+        MainStage.setTitle("Main Page");
+        MainStage.setScene(new Scene(MainScene));
+        MainStage.initStyle(StageStyle.UNDECORATED);
+        MainStage.show();
+    }
+
     public void handleClicks(ActionEvent event) {
     }
 
@@ -18,11 +29,7 @@ public class ControllerMainGUI {
 
     public void SignOutButton(ActionEvent event) throws Exception {
         ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
-        Parent root = FXMLLoader.load(getClass().getResource("sampleLogIn.fxml"));
-        Stage primaryStage=new Stage();
-        primaryStage.setTitle("LogIn Page");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.show();
+        ControllerLogIn lgn=new ControllerLogIn();
+        lgn.launchLogIn();
     }
 }

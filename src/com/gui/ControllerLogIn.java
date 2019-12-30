@@ -18,6 +18,17 @@ import java.util.List;
 
 public class ControllerLogIn {
 
+    private Stage logInStage=new Stage();
+
+    public void launchLogIn() throws Exception
+    {
+        Parent logInScene = FXMLLoader.load(getClass().getResource("sampleLogIn.fxml"));
+        logInStage.setTitle("LogIn Page");
+        logInStage.setScene(new Scene(logInScene));
+        logInStage.initStyle(StageStyle.UNDECORATED);
+        logInStage.show();
+    }
+
     @FXML
     private TextField NumeLogIn;
 
@@ -34,12 +45,8 @@ public class ControllerLogIn {
     public void registerPage (ActionEvent event) throws Exception
     {
         ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
-        Parent root = FXMLLoader.load(getClass().getResource("sampleRegisterPage.fxml"));
-        Stage primaryStage=new Stage();
-        primaryStage.setTitle("Register Page");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.show();
+        ControllerRegister rgs=new ControllerRegister();
+        rgs.launchRegister();
     }
 
     public void LogInPage(ActionEvent event) throws Exception {
@@ -54,30 +61,17 @@ public class ControllerLogIn {
             for(Utilizator tempUtilizator:list_utl) {
                 if ((tempUtilizator.getNume().equals(NumeLogIn.getText())) && (tempUtilizator.getParola().equals(ParolaLogIn.getText()))&&(!NumeLogIn.getText().isEmpty())&&(!ParolaLogIn.getText().isEmpty())) {
                     ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
-                    Parent root = FXMLLoader.load(getClass().getResource("sampleMainGUI.fxml"));
-                    Stage primaryStage = new Stage();
-                    primaryStage.setTitle("Main Page");
-                    primaryStage.setScene(new Scene(root));
-                    primaryStage.initStyle(StageStyle.UNDECORATED);
-                    primaryStage.show();
+                    ControllerMainGUI mn=new ControllerMainGUI();
+                    mn.launchMain();
                 }
                 else if(NumeLogIn.getText().isEmpty()||ParolaLogIn.getText().isEmpty())
                 {
                     System.out.println("Trebuie completate toate campurile");
                     ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
-                    Parent root = FXMLLoader.load(getClass().getResource("sampleLogIn.fxml"));
-                    Stage primaryStage=new Stage();
-                    primaryStage.setTitle("LogIn Page");
-                    primaryStage.setScene(new Scene(root));
-                    primaryStage.initStyle(StageStyle.UNDECORATED);
-                    primaryStage.show();
+                    launchLogIn();
 
-                    Parent root1 = FXMLLoader.load(getClass().getResource("sampleErrorCompletion.fxml"));
-                    Stage primaryStage1=new Stage();
-                    primaryStage1.setTitle("Error");
-                    primaryStage1.setScene(new Scene(root1));
-                    primaryStage1.initStyle(StageStyle.UNDECORATED);
-                    primaryStage1.show();
+                    ErrorCompletion erc=new ErrorCompletion();
+                    erc.launchErrorCompletion();
                     break;
                 }
 
