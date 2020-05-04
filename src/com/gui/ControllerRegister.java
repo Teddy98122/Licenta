@@ -1,13 +1,18 @@
 package com.gui;
 
+import animatefx.animation.FadeIn;
 import com.database_admin.Utilizator;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.hibernate.Session;
@@ -15,20 +20,38 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import java.awt.*;
+import java.io.File;
 import java.util.List;
 
 
 public class ControllerRegister {
 
     private Stage RegisterStage=new Stage();
-
+    private double xOffset=0;
+    private double yOffset=0;
     public void launchRegister() throws Exception
     {
         Parent registerScene = FXMLLoader.load(getClass().getResource("sampleRegisterPage.fxml"));
         RegisterStage.setTitle("Register Page");
         RegisterStage.setScene(new Scene(registerScene));
         RegisterStage.initStyle(StageStyle.UNDECORATED);
+        registerScene.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            }
+        });
+
+        registerScene.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                RegisterStage.setX(event.getScreenX() - xOffset);
+                RegisterStage.setY(event.getScreenY() - yOffset);
+            }
+        });
         RegisterStage.show();
+        new FadeIn(registerScene).play();
     }
 
     @FXML
@@ -48,6 +71,12 @@ public class ControllerRegister {
 
     @FXML
     public void createAccount(ActionEvent event) throws Exception {
+        /*
+        String musicFile = "src/com/sounds/clicksoundeffect.mp3";     // For example
+        Media sound = new Media(new File(musicFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play(); */
+
         int semafor=0;
         try
         {
@@ -112,6 +141,12 @@ public class ControllerRegister {
     }
 
     public void BackToLogIn(ActionEvent event) throws Exception {
+        /*
+        String musicFile = "src/com/sounds/clicksoundeffect.mp3";     // For example
+        Media sound = new Media(new File(musicFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play(); */
+
         ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
         ControllerLogIn cnt=new ControllerLogIn();
         cnt.launchLogIn();

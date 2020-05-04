@@ -4,9 +4,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
-@Table(name="Contract")
+@Table(name="contract")
 public class Contract {
 
     @Id
@@ -17,7 +19,7 @@ public class Contract {
     private int Client_ID;
 
     @Column(name="Data_contract")
-    private String Data_contract;
+    private LocalDate Data_contract;
 
     @Column(name="Durata")
     private int Durata;
@@ -27,9 +29,10 @@ public class Contract {
 
     }
 
-    public Contract(String data_contract, int durata) {
+    public Contract(int Client_ID,LocalDate data_contract, int durata) {
         Data_contract = data_contract;
         Durata = durata;
+        this.Client_ID=Client_ID;
     }
 
     public int getContr_NR() {
@@ -48,11 +51,11 @@ public class Contract {
         Client_ID = client_ID;
     }
 
-    public String getData_contract() {
+    public LocalDate getData_contract() {
         return Data_contract;
     }
 
-    public void setData_contract(String data_contract) {
+    public void setData_contract(LocalDate data_contract) {
         Data_contract = data_contract;
     }
 

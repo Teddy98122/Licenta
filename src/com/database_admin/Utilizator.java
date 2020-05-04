@@ -28,6 +28,17 @@ public class Utilizator {
     @Column(name="Email")
     private String Email;
 
+    public String getImageURL() {
+        return ImageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        ImageURL = imageURL;
+    }
+
+    @Column(name="ImageURL")
+    public  String ImageURL;
+
     public Utilizator()
     {
 

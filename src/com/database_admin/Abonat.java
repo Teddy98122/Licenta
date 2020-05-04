@@ -1,5 +1,7 @@
 package com.database_admin;
-
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,21 +23,17 @@ public class Abonat {
     private String Prenume;
 
     @Column(name="CNP")
-    private double CNP;
-
-    @Column(name="Data_nastere")
-    private String Data_nastere;
+    private String CNP;
 
     public Abonat()
     {
 
     }
 
-    public Abonat(String nume, String prenume, double CNP, String data_nastere) {
-        Nume = nume;
-        Prenume = prenume;
+    public Abonat(String nume, String prenume, String CNP) {
+        this.Nume = nume;
+        this.Prenume = prenume;
         this.CNP = CNP;
-        Data_nastere = data_nastere;
     }
 
     public int getClient_ID() {
@@ -62,21 +60,14 @@ public class Abonat {
         Prenume = prenume;
     }
 
-    public double getCNP() {
+    public String getCNP() {
         return CNP;
     }
 
-    public void setCNP(double CNP) {
+    public void setCNP(String CNP) {
         this.CNP = CNP;
     }
 
-    public String getData_nastere() {
-        return Data_nastere;
-    }
-
-    public void setData_nastere(String data_nastere) {
-        Data_nastere = data_nastere;
-    }
 
     @Override
     public String toString() {
@@ -85,7 +76,6 @@ public class Abonat {
                 ", Nume='" + Nume + '\'' +
                 ", Prenume='" + Prenume + '\'' +
                 ", CNP=" + CNP +
-                ", Data_nastere='" + Data_nastere + '\'' +
                 '}';
     }
 }

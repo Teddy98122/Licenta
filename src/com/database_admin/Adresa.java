@@ -2,11 +2,16 @@ package com.database_admin;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name = "adresa")
 public class Adresa {
+
+    @Id
+    @Column(name="Table_Key")
+    private int Table_Key;
 
     @Column(name="Contr_NR")
     private int Contr_NR;
@@ -34,6 +39,7 @@ public class Adresa {
 
     @Column(name="Apartament")
     private int Apartament;
+
 
     public Adresa()
     {

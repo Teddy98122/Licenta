@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="539.0" style="-fx-background-color: #2c003e; " xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.AddAboant">
+    <children>
+        <Pane layoutY="75.0" prefHeight="570.0" prefWidth="539.0">
+            <children>
+                <TextField fx:id="NumeAbonat" layoutX="203.0" layoutY="127.0" prefHeight="34.0" prefWidth="281.0" style="-fx-border-color: #9643A9; -fx-background-color: #2c003e; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@LogInStyle.css" />
+                <Label layoutX="55.0" layoutY="134.0" text="Nume" textFill="#ddd9d9">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="64.0" layoutY="387.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
+                <Separator layoutX="58.0" layoutY="25.0" opacity="0.15" prefHeight="3.0" prefWidth="423.0" />
+                <Button layoutX="153.0" fx:id="cancelButtonAbonnat" onAction="#closeWindow" layoutY="494.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="257.0" style="-fx-background-color: #FCBB31; -fx-background-radius: 5em;" text="Anulare" textFill="WHITE" />
+                <Button layoutX="153.0" fx:id="addButtonAbonat" layoutY="429.0" onAction="#add" mnemonicParsing="false" prefHeight="34.0" prefWidth="257.0" style="-fx-background-color: #CE201C; -fx-background-radius: 5em;" text="Adaugare" textFill="WHITE" />
+            <TextField fx:id="PrenumeAbonat" layoutX="203.0" layoutY="196.0" prefHeight="34.0" prefWidth="281.0" style="-fx-border-color: #9643A9; -fx-background-color: #2c003e; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@LogInStyle.css" />
+            <Label layoutX="55.0" layoutY="203.0" text="Prenume" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="CNPAbonat" layoutX="203.0" layoutY="268.0" prefHeight="34.0" prefWidth="281.0" style="-fx-border-color: #9643A9; -fx-background-color: #2c003e; -fx-background-insets: 0; -fx-border-radius: 20;" styleClass="text-input" stylesheets="@LogInStyle.css" />
+            <Label layoutX="60.0" layoutY="275.0" text="CNP" textFill="#ddd9d9">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            </children>
+        </Pane>
+        <Button fx:id="CloseButtonLogIn" layoutX="501.0" layoutY="14.0" mnemonicParsing="false" onAction="#CloseButtonLogIn" prefHeight="0.0" prefWidth="13.0" style="-fx-background-color: #CE201C; -fx-background-radius: 5em;" text="X" textFill="WHITE" />
+          <Label layoutX="175.0" layoutY="51.0" text="Adaugare Abonat" textFill="#bc0b0b">
+              <font>
+                  <Font name="Berlin Sans FB" size="24.0" />
+              </font>
+          </Label>
+    </children>
+</AnchorPane>

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="539.0" style="-fx-background-color: #2A0033;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ControllerRegister">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="539.0" style="-fx-background-color: #2A0033;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ControllerRegister">
     <children>
         <Pane layoutY="75.0" prefHeight="570.0" prefWidth="539.0">
             <children>
@@ -37,9 +37,9 @@
             <Button fx:id="BackToLogIn" layoutX="62.0" layoutY="431.0" mnemonicParsing="false" onAction="#BackToLogIn" prefHeight="57.0" prefWidth="423.0" style="-fx-background-color: #12cc56; -fx-background-radius: 5em;" text="Inapoi la pagina de LogIn" textFill="WHITE" />
             </children>
         </Pane>
-        <Label layoutX="226.0" layoutY="40.0" text="Register" textFill="#ddd9d9">
+        <Label layoutX="214.0" layoutY="48.0" text="Inregistrare" textFill="#bc1313">
             <font>
-                <Font size="24.0" />
+                <Font name="Berlin Sans FB" size="24.0" />
             </font>
         </Label>
       <Button fx:id="CloseButtonRegister" layoutX="501.0" layoutY="14.0" mnemonicParsing="false" onAction="#CloseButtonRegister" prefHeight="0.0" prefWidth="13.0" style="-fx-background-color: #CE201C; -fx-background-radius: 5em;" text="X" textFill="WHITE" />

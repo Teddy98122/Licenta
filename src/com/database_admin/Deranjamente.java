@@ -2,11 +2,17 @@ package com.database_admin;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDate;
 
 @Entity
 @Table(name="deranjamente")
 public class Deranjamente {
+
+    @Id
+    @Column(name="Id_deranjament")
+    private int Id_deranjament;
 
     @Column(name="Client_ID")
     private int Client_ID;
@@ -18,7 +24,7 @@ public class Deranjamente {
     private String Problema;
 
     @Column(name="Data_deranjament")
-    private String Data_deranjament;
+    private LocalDate Data_deranjament;
 
     @Column(name="Serviciu")
     private String Serviciu;
@@ -31,7 +37,7 @@ public class Deranjamente {
 
     }
 
-    public Deranjamente(int client_ID, int contr_NR, String problema, String data_deranjament, String serviciu, String stare) {
+    public Deranjamente(int client_ID, int contr_NR, String problema, LocalDate data_deranjament, String serviciu, String stare) {
         Client_ID = client_ID;
         Contr_NR = contr_NR;
         Problema = problema;
@@ -64,11 +70,11 @@ public class Deranjamente {
         Problema = problema;
     }
 
-    public String getData_deranjament() {
+    public LocalDate getData_deranjament() {
         return Data_deranjament;
     }
 
-    public void setData_deranjament(String data_deranjament) {
+    public void setData_deranjament(LocalDate data_deranjament) {
         Data_deranjament = data_deranjament;
     }
 

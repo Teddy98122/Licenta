@@ -2,14 +2,16 @@
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
+
 <hibernate-configuration>
+
 
     <session-factory>
 
         <!-- JDBC Database connection settings -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/pentru_licenta?useSSL=false</property>
-        <property name="connection.username">hbuser</property>
+        <property name="connection.url">jdbc:mysql://34.77.90.167:3306/pentru_licenta</property>
+        <property name="connection.username">root</property>
         <property name="connection.password">hbuser</property>
 
         <!-- JDBC connection pool settings ... using built-in test pool -->
@@ -23,7 +25,12 @@
 
 		<!-- Set the current session context -->
 		<property name="current_session_context_class">thread</property>
- 
+        <mapping class="com.database_admin.Abonat" />
+        <mapping class="com.database_admin.Utilizator" />
+        <mapping class="com.database_admin.Adresa" />
+        <mapping class="com.database_admin.Contract" />
+        <mapping class="com.database_admin.Deranjamente" />
+        <mapping class="com.database_admin.Servicii" />
     </session-factory>
 
 </hibernate-configuration>

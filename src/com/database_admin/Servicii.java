@@ -2,11 +2,16 @@ package com.database_admin;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="servicii")
 public class Servicii {
+
+    @Id
+    @Column(name="Id_serv")
+    private int Id_serv;
 
     @Column(name="Client_ID")
     private int Client_ID;
