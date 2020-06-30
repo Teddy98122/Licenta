@@ -2,8 +2,6 @@ package com.gui;
 
 import animatefx.animation.*;
 import com.database_admin.*;
-import javafx.application.Application;
-import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -20,21 +18,15 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.media.AudioClip;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
-import javafx.scene.transform.Scale;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -43,15 +35,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import javax.imageio.ImageIO;
-import javax.jws.soap.SOAPBinding;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -220,6 +209,13 @@ public class ControllerMainGUI implements Initializable {
 
     public void SignOutButton(ActionEvent event) throws Exception {
         factoryMain2.close();
+
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
+
         ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
         ControllerLogIn lgn = new ControllerLogIn();
         lgn.launchLogIn();
@@ -231,6 +227,12 @@ public class ControllerMainGUI implements Initializable {
         FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (*.jpg)", "*.JPG");
         FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (*.png)", "*.PNG");
         fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG);
+
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+        Clip clip2 = AudioSystem.getClip();
+        clip2.open(audioIn);
+        clip2.start();
 
         //Show open file dialog
         File file = fileChooser.showOpenDialog(null);
@@ -280,6 +282,12 @@ public class ControllerMainGUI implements Initializable {
     public void handleClicksAbonati(ActionEvent event) throws Exception {
         //  PleaseWait please= new PleaseWait();
         //please.launchPleaseWait();
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
+
         MyTable.getColumns().clear();
         TableColumn Client_ID = new TableColumn("Client_ID");
         TableColumn Nume = new TableColumn("Nume");
@@ -290,11 +298,12 @@ public class ControllerMainGUI implements Initializable {
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-               /* String soundName = "src/com/sounds/sound2.wav";
-                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+                /*
+                InputStream is= getClass().getResourceAsStream("res/sound.wav");
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new BufferedInputStream(is));
                 Clip clip = AudioSystem.getClip();
                 clip.open(audioInputStream);
-                clip.start(); */
+                clip.start( ); */
 
                 Session sesionMain = factoryMain2.getCurrentSession();
                 semaforMenu = 1;
@@ -344,7 +353,13 @@ public class ControllerMainGUI implements Initializable {
 
     }
 
-    public void handleClicksDeranjamente(ActionEvent event) {
+    public void handleClicksDeranjamente(ActionEvent event) throws Exception {
+
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
 
         MyTable.getColumns().clear();
         TableColumn Client_ID = new TableColumn("Client_ID");
@@ -416,7 +431,13 @@ public class ControllerMainGUI implements Initializable {
 
     }
 
-    public void handleClicksServicii(ActionEvent event) {
+    public void handleClicksServicii(ActionEvent event) throws Exception {
+
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
 
         MyTable.getColumns().clear();
         TableColumn Client_ID = new TableColumn("Client_ID");
@@ -478,7 +499,13 @@ public class ControllerMainGUI implements Initializable {
 
     }
 
-    public void handleClicksAdrese(ActionEvent event) {
+    public void handleClicksAdrese(ActionEvent event) throws Exception {
+
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
 
         MyTable.getColumns().clear();
         TableColumn Contr_NR = new TableColumn("Contr_NR");
@@ -555,7 +582,13 @@ public class ControllerMainGUI implements Initializable {
 
     }
 
-    public void handleClicksContracte(ActionEvent event) {
+    public void handleClicksContracte(ActionEvent event) throws Exception {
+
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
 
         MyTable.getColumns().clear();
         TableColumn Contr_NR = new TableColumn("Contr_NR");
@@ -641,6 +674,12 @@ public class ControllerMainGUI implements Initializable {
 
     public void adaugareInregistrare(ActionEvent event) throws Exception {
 
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
+
 
         switch (semaforMenu) {
             case 0:
@@ -671,11 +710,304 @@ public class ControllerMainGUI implements Initializable {
         }
     }
 
+    private double xOffset2 = 0;
+    private double yOffset2 = 0;
+
     public void handleCautareAvasata(ActionEvent event) throws Exception {
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
+
         Parent Scene2;
         Scene2 = FXMLLoader.load(getClass().getResource("sampleCautareAvansata.fxml"));
         MainStage.setTitle("Cautare avansata");
         MainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         MainStage.setScene(new Scene(Scene2));
+        Scene2.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset2 = event.getSceneX();
+                yOffset2 = event.getSceneY();
+            }
+        });
+
+        Scene2.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                MainStage.setX(event.getScreenX() - xOffset2);
+                MainStage.setY(event.getScreenY() - yOffset2);
+            }
+        });
+        new Pulse(Scene2).play();
+    }
+
+    public void expExcel(ActionEvent event) throws Exception {
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
+
+        Session sesionMain = factoryMain2.getCurrentSession();
+        if (semaforMenu == 0 || semaforMenu == 1) {
+            sesionMain.beginTransaction();
+            List<Abonat> abnList = sesionMain.createQuery("from Abonat").getResultList();
+            File fileAbn = fileChooser.showSaveDialog(null);
+           // FileChooser.ExtensionFilter extFilterCSV = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.CSV");
+           // fileChooser.getExtensionFilters().add(extFilterCSV);
+
+            try (PrintWriter writer = new PrintWriter(fileAbn+".csv")) {
+
+                StringBuilder sb = new StringBuilder();
+                sb.append("Client_ID");
+                sb.append(',');
+                sb.append("Nume");
+                sb.append(',');
+                sb.append("Prenume");
+                sb.append(',');
+                sb.append("CNP");
+                //sb.append('\n');
+
+               /* sb.append("1");
+                sb.append(',');
+                sb.append("Prashant Ghimire");
+                sb.append('\n'); */
+               for(Abonat tempAbn:abnList)
+               {
+                   sb.append('\n');
+                   sb.append(tempAbn.getClient_ID());
+                   sb.append(',');
+                   sb.append(tempAbn.getNume());
+                   sb.append(',');
+                   sb.append(tempAbn.getPrenume());
+                   sb.append(',');
+                   sb.append(tempAbn.getCNP());
+               }
+
+                writer.write(sb.toString());
+
+                System.out.println("done!");
+
+            } catch (FileNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        else if (semaforMenu == 2) {
+            sesionMain.beginTransaction();
+            List<Deranjamente> drjList = sesionMain.createQuery("from Deranjamente").getResultList();
+            File fileAbn = fileChooser.showSaveDialog(null);
+            // FileChooser.ExtensionFilter extFilterCSV = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.CSV");
+            // fileChooser.getExtensionFilters().add(extFilterCSV);
+
+            try (PrintWriter writer = new PrintWriter(fileAbn+".csv")) {
+
+                StringBuilder sb = new StringBuilder();
+                sb.append("Contr_NR");
+                sb.append(',');
+                sb.append("Client_ID");
+                sb.append(',');
+                sb.append("Problema");
+                sb.append(',');
+                sb.append("Data_deranjament");
+                sb.append(',');
+                sb.append("Serviciu");
+                sb.append(',');
+                sb.append("Stare");
+
+
+                for(Deranjamente tempDrj:drjList)
+                {
+                    sb.append('\n');
+                    sb.append(tempDrj.getContr_NR());
+                    sb.append(',');
+                    sb.append(tempDrj.getClient_ID());
+                    sb.append(',');
+                    sb.append(tempDrj.getProblema());
+                    sb.append(',');
+                    sb.append(tempDrj.getData_deranjament());
+                    sb.append(',');
+                    sb.append(tempDrj.getServiciu());
+                    sb.append(',');
+                    sb.append(tempDrj.getStare());
+                }
+
+                writer.write(sb.toString());
+
+                System.out.println("done!");
+
+            } catch (FileNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        else if (semaforMenu == 3) {
+            sesionMain.beginTransaction();
+            List<Servicii> srvList = sesionMain.createQuery("from Servicii").getResultList();
+            File fileAbn = fileChooser.showSaveDialog(null);
+            // FileChooser.ExtensionFilter extFilterCSV = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.CSV");
+            // fileChooser.getExtensionFilters().add(extFilterCSV);
+
+            try (PrintWriter writer = new PrintWriter(fileAbn+".csv")) {
+
+                StringBuilder sb = new StringBuilder();
+                sb.append("Client_ID");
+                sb.append(',');
+                sb.append("Tip serviciu");
+                sb.append(',');
+                sb.append("Pret");
+
+
+                for(Servicii tempSrv:srvList)
+                {
+                    sb.append('\n');
+                    sb.append(tempSrv.getClient_ID());
+                    sb.append(',');
+                    sb.append(tempSrv.getTip_serv());
+                    sb.append(',');
+                    sb.append(tempSrv.getPret());
+                }
+
+                writer.write(sb.toString());
+
+                System.out.println("done!");
+
+            } catch (FileNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        else if (semaforMenu == 4) {
+            sesionMain.beginTransaction();
+            List<Adresa> adrList = sesionMain.createQuery("from Adresa").getResultList();
+            File fileAbn = fileChooser.showSaveDialog(null);
+            // FileChooser.ExtensionFilter extFilterCSV = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.CSV");
+            // fileChooser.getExtensionFilters().add(extFilterCSV);
+
+            try (PrintWriter writer = new PrintWriter(fileAbn+".csv")) {
+
+                StringBuilder sb = new StringBuilder();
+                sb.append("Contr_NR");
+                sb.append(',');
+                sb.append("Tara");
+                sb.append(',');
+                sb.append("Judet");
+                sb.append(',');
+                sb.append("Localitate");
+                sb.append(',');
+                sb.append("Strada");
+                sb.append(',');
+                sb.append("Numar");
+                sb.append(',');
+                sb.append("Scara");
+                sb.append(',');
+                sb.append("Apartament");
+
+
+                for(Adresa tempAdr:adrList)
+                {
+                    sb.append('\n');
+                    sb.append(tempAdr.getContr_NR());
+                    sb.append(',');
+                    sb.append(tempAdr.getTara());
+                    sb.append(',');
+                    sb.append(tempAdr.getJudet());
+                    sb.append(',');
+                    sb.append(tempAdr.getLocalitate());
+                    sb.append(',');
+                    sb.append(tempAdr.getStrada());
+                    sb.append(',');
+                    sb.append(tempAdr.getNumar());
+                    sb.append(',');
+                    sb.append(tempAdr.getScara());
+                    sb.append(',');
+                    sb.append(tempAdr.getApartament());
+                }
+
+                writer.write(sb.toString());
+
+                System.out.println("done!");
+
+            } catch (FileNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        else if (semaforMenu == 5) {
+            sesionMain.beginTransaction();
+            List<Contract> contrList = sesionMain.createQuery("from Contract").getResultList();
+            File fileAbn = fileChooser.showSaveDialog(null);
+            // FileChooser.ExtensionFilter extFilterCSV = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.CSV");
+            // fileChooser.getExtensionFilters().add(extFilterCSV);
+
+            try (PrintWriter writer = new PrintWriter(fileAbn+".csv")) {
+
+                StringBuilder sb = new StringBuilder();
+                sb.append("Contr_NR");
+                sb.append(',');
+                sb.append("Client_ID");
+                sb.append(',');
+                sb.append("Data_contract");
+                sb.append(',');
+                sb.append("Durata");
+
+                for(Contract tempContr:contrList)
+                {
+                    sb.append('\n');
+                    sb.append(tempContr.getContr_NR());
+                    sb.append(',');
+                    sb.append(tempContr.getClient_ID());
+                    sb.append(',');
+                    sb.append(tempContr.getData_contract());
+                    sb.append(',');
+                    sb.append(tempContr.getDurata());
+                }
+
+                writer.write(sb.toString());
+
+                System.out.println("done!");
+
+            } catch (FileNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        sesionMain.getTransaction().commit();
+    }
+
+    public void stergereInregistrare(ActionEvent event) throws Exception {
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
+
+
+        switch (semaforMenu) {
+            case 0:
+                DeleteAbonat dlt=new DeleteAbonat();
+                dlt.launchDelete();
+                break;
+            case 1:
+                DeleteAbonat dlt2=new DeleteAbonat();
+                dlt2.launchDelete();
+                break;
+            case 2:
+                DeleteDeranjamente dlt3=new DeleteDeranjamente();
+                dlt3.launchDelete();
+                break;
+            case 3:
+                DeleteServicii dlt4=new DeleteServicii();
+                dlt4.launchDelete();
+                break;
+            case 4:
+               DeleteAdresa dlt5=new DeleteAdresa();
+               dlt5.launchDelete();
+                break;
+            case 5:
+               DeleteContract dlt6=new DeleteContract();
+               dlt6.launchDelete();
+               break;
+
+        }
     }
 }

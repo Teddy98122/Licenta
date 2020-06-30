@@ -41,7 +41,7 @@ public class AddDeranjamente {
 
     public void launchAdd() throws Exception {
         Parent addAbbScene = FXMLLoader.load(getClass().getResource("sampleAddDeranjamente.fxml"));
-        addAbbStage.setTitle("Error");
+        addAbbStage.setTitle("");
         addAbbStage.setScene(new Scene(addAbbScene));
         addAbbStage.initStyle(StageStyle.UNDECORATED);
         addAbbScene.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -97,7 +97,15 @@ public class AddDeranjamente {
                 sesionDrj.getTransaction().commit();
                 ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
             }
-        } finally {
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Eroare introducere");
+            ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
+            EroareIntroducere err =new EroareIntroducere();
+            err.launch_EroareIntroucere();
+        }
+        finally {
             factoryDrj.close();
         }
     }

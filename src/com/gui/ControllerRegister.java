@@ -11,16 +11,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.awt.*;
-import java.io.File;
 import java.util.List;
 
 
@@ -109,6 +105,8 @@ public class ControllerRegister {
                 case 1:
                     System.out.println("Numele sau email-ul exista deja !");
                     ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
+                    EroareIntroducere err =new EroareIntroducere();
+                    err.launch_EroareIntroucere();
                     launchRegister();
                     break;
                 case 2:

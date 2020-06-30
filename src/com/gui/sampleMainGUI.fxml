@@ -110,7 +110,7 @@
                   </LinearGradient>
                </textFill>
                 </Button>
-            <Button alignment="BASELINE_LEFT" fx:id="cautareButton" onAction="#handleCautareAvasata" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="269.0" style="-fx-background-radius: 5em;" stylesheets="@GUIstyle.css" text="Cautare personalizata" textFill="#21754b">
+            <Button fx:id="cautareButton" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleCautareAvasata" prefHeight="46.0" prefWidth="273.0" style="-fx-background-radius: 5em;" stylesheets="@GUIstyle.css" text="Vedere multipla" textFill="#6756ff">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -145,9 +145,9 @@
             </Text>
          </children></Pane>
       <Button fx:id="CloseButtonMain" layoutX="1243.0" layoutY="15.0" mnemonicParsing="false" onAction="#CloseButtonMain" prefHeight="0.0" prefWidth="13.0" style="-fx-background-color: #CE201C; -fx-background-radius: 5em;" text="X" textFill="WHITE" />
-      <Button layoutX="824.0" fx:id="AddREG" layoutY="665.0" mnemonicParsing="false" onAction="#adaugareInregistrare" prefHeight="25.0" prefWidth="177.0" style="-fx-background-color: #CE201C; -fx-background-radius: 5em;" text="Adaugare " textFill="WHITE" />
-      <Button layoutX="1004.0" fx:id="StrREG" layoutY="665.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="177.0" style="-fx-background-color: #00CF91; -fx-background-radius: 5em;" text="Stergere" textFill="WHITE" />
-      <TableView fx:id="MyTable"  layoutX="415.0" layoutY="197.0" prefHeight="458.0" prefWidth="819.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="415.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="197.0">
+      <Button fx:id="AddREG" layoutX="824.0" layoutY="665.0" mnemonicParsing="false" onAction="#adaugareInregistrare" prefHeight="25.0" prefWidth="177.0" style="-fx-background-color: #CE201C; -fx-background-radius: 5em;" text="Adaugare " textFill="WHITE" />
+      <Button fx:id="StrREG" layoutX="1004.0" layoutY="665.0" mnemonicParsing="false" onAction="#stergereInregistrare" prefHeight="25.0" prefWidth="177.0" style="-fx-background-color: #00CF91; -fx-background-radius: 5em;" text="Stergere" textFill="WHITE" />
+      <TableView fx:id="MyTable" layoutX="415.0" layoutY="197.0" prefHeight="458.0" prefWidth="819.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="415.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="197.0">
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy></TableView>
@@ -157,7 +157,7 @@
             <Font name="Bell MT" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="640.0" fx:id="ExcREG" layoutY="665.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="177.0" style="-fx-background-color: #ffa372; -fx-background-radius: 5em;" text="Exportare Excel" textFill="WHITE" />
+      <Button fx:id="ExcREG" layoutX="640.0" layoutY="665.0" mnemonicParsing="false" onAction="#expExcel" prefHeight="25.0" prefWidth="177.0" style="-fx-background-color: #ffa372; -fx-background-radius: 5em;" text="Exportare Excel" textFill="WHITE" />
     </children>
     <effect>
         <DropShadow color="#1b1eeb" />

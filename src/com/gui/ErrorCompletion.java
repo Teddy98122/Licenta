@@ -18,6 +18,7 @@ public class ErrorCompletion {
     private Stage errCompStage=new Stage();
     public void launchErrorCompletion() throws Exception
     {
+
         Parent errCompScene = FXMLLoader.load(getClass().getResource("sampleErrorCompletion.fxml"));
         errCompStage.setTitle("Error");
         errCompStage.setScene(new Scene(errCompScene));

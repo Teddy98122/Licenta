@@ -26,7 +26,9 @@ import org.hibernate.cfg.Configuration;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -86,12 +88,12 @@ public class ControllerLogIn {
 
     public void registerPage (ActionEvent event) throws Exception
     {
-        /*
-        String soundName = "res/sound2.wav";
-        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
         Clip clip = AudioSystem.getClip();
-        clip.open(audioInputStream);
-        clip.start(); */
+        clip.open(audioIn);
+        clip.start();
 
 
         ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
@@ -101,12 +103,11 @@ public class ControllerLogIn {
 
     public void LogInPage(ActionEvent event) throws Exception {
 
-        /*
-        String soundName = "res/sound2.wav";
-        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName));
+        URL url = ClassLoader.getSystemResource("sound2.wav");
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
         Clip clip = AudioSystem.getClip();
-        clip.open(audioInputStream);
-        clip.start(); */
+        clip.open(audioIn);
+        clip.start();
 
         int semafor=0;
         int semafor2=0;

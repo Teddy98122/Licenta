@@ -37,7 +37,7 @@ public class AddAboant  {
 
     public void launchAdd() throws Exception {
         Parent addAbbScene = FXMLLoader.load(getClass().getResource("sampleAddAbonat.fxml"));
-        addAbbStage.setTitle("Error");
+        addAbbStage.setTitle("Adaugare Abonat");
         addAbbStage.setScene(new Scene(addAbbScene));
         addAbbStage.initStyle(StageStyle.UNDECORATED);
         addAbbScene.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -92,7 +92,15 @@ public class AddAboant  {
                 sesionAbonat.getTransaction().commit();
                 ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
             }
-        } finally {
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Eroare introducere");
+            ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
+            EroareIntroducere err =new EroareIntroducere();
+            err.launch_EroareIntroucere();
+        }
+        finally {
             factoryAbonat.close();
         }
     }

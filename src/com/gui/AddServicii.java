@@ -35,7 +35,7 @@ public class AddServicii {
 
     public void launchAdd() throws Exception {
         Parent addAbbScene = FXMLLoader.load(getClass().getResource("sampleAddServicii.fxml"));
-        addAbbStage.setTitle("Error");
+        addAbbStage.setTitle("Adaugare Servicii");
         addAbbStage.setScene(new Scene(addAbbScene));
         addAbbStage.initStyle(StageStyle.UNDECORATED);
         addAbbScene.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -91,7 +91,16 @@ public class AddServicii {
                 sesionServ.getTransaction().commit();
                 ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
             }
-        } finally {
+
+        }
+        catch(Exception ex)
+        {
+            System.out.println("Eroare introducere");
+            ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
+            EroareIntroducere err =new EroareIntroducere();
+            err.launch_EroareIntroucere();
+        }
+        finally {
             factoryServ.close();
         }
     }
